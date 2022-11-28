@@ -35,14 +35,13 @@ typedef LPVOID(WINAPI* pfnHeapAlloc)(
 	IN	SIZE_T	dwBytes
 	);
 
+PVOID VxMoveMemory(
+	_Inout_ PVOID dest,
+	_In_    const PVOID src,
+	_In_    SIZE_T len
+	);
 
 typedef void(__stdcall* pfnSleep)(DWORD dwMilliseconds);
-
-struct ustring {
-	DWORD Length;
-	DWORD MaximumLength;
-	PUCHAR Buffer;
-} _data, key;
 
 typedef NTSTATUS(NTAPI* SystemFunction032)(
 	struct ustring* data,
